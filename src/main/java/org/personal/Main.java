@@ -1,5 +1,4 @@
 package org.personal;
-import org.personal.Wordle.domain.WordManager;
 import org.personal.Wordle.logic.GameLogic;
 import org.personal.Wordle.ui.TextUI;
 
@@ -12,14 +11,15 @@ public class Main {
     }
 
     public static void testGame() throws IOException {
-        GameLogic gl = new GameLogic();
+        GameLogic gl = new GameLogic(true);
         Scanner sc = new Scanner(System.in);
-        TextUI ui = new TextUI(sc, gl);
+        TextUI ui = new TextUI(sc, gl, true);
 
         /*
         wordle with increasing difficulty
-        guess x letter word with y guesses, where x=input and y=x+1
+        guess x letter word with y guesses, where x=input and y=x.length()+1
         create a dictionary file with how many x letter words
+        prevent players from inputting non-words like asdxz, xlkams
         choose that dictionary file and play it with y guesses
         every dictionary file can only be played once per day
 
