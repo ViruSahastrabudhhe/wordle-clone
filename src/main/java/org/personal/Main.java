@@ -12,9 +12,9 @@ public class Main {
     }
 
     public static void testGame() throws IOException {
-        GameLogic gl = new GameLogic(true);
+        GameLogic gl = new GameLogic();
         Scanner sc = new Scanner(System.in);
-        TextUI ui = new TextUI(sc, gl, true);
+        TextUI ui = new TextUI(sc, gl);
 
         /*
         wordle with increasing difficulty
